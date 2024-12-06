@@ -37,12 +37,25 @@
         }
         .row2{
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             padding-top: 160px;
+            padding-bottom: 160px;
         }
         .box{
-            padding: 30px;
-            border: 1px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 8px;
+            box-shadow: 3px 3px 3px 3px black;
+            transition-property: transform;
+            transition-duration: 0.3s;
+        }
+        .box:hover{
+            transform: scale(1.2,1.2);
+            background: linear-gradient(#8cff00,#00ff73);
         }
     </style>
 </head>
@@ -77,13 +90,13 @@
                 <a href="https://dt7768181.github.io/online_d_store/">See the Project</a>
             </div>
             <div class="box">
-                <img src="assets/images/image-420x420.jpg">
+                <img src="assets/images/null.png">
                 <h2>Project 2</h2>
                 <p>project 2 description</p>
                 <a href="#">See the Project</a>
             </div>
             <div class="box">
-                <img src="assets/images/image-420x420.jpg">
+                <img src="assets/images/null.png">
                 <h2>Project 3</h2>
                 <p>project 3 description</p>
                 <a href="#">See the Project</a>
