@@ -1,118 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        *{
-            margin: 0px;
-        }
-        .header{
-            display: flex;
-            justify-content: space-between;
-            background-color: #2C3A47;
-            padding: 10px;
-        }
-        li{
-            display: inline-block;
-            padding: 10px;
-            font-size: larger;
-        }
-        .header a{
-            text-decoration: none;
-            color: white;
-        }
-        .header a:hover{
-            text-decoration: underline;
-        }
-        .row{
-            display: flex;
-            padding-left: 150px;
-            padding-top: 100px;
-        }
-        .img{
-            padding-left: 100px;
-            padding-right: 150px;
-        }
-        .row2{
-            display: flex;
-            justify-content: space-around;
-            padding-top: 160px;
-            padding-bottom: 160px;
-        }
-        .box{
-            padding-left: 80px;
-            padding-right: 80px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            margin: 10px;
-            border: 2px solid black;
-            border-radius: 8px;
-            box-shadow: 3px 3px 3px 3px black;
-            transition-property: transform;
-            transition-duration: 0.3s;
-        }
-        .box:hover{
-            transform: scale(1.2,1.2);
-        }
-        .box h2,p{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .box a{
-            text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .box a:hover{
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="conatainer">
-        <div class="header">
-        <div><h1 style="color: white; font-family: Arial, Helvetica, sans-serif;">Dheeraj Thummalapenta</h1></div>
-        <div>
-            <ul style="font-family: Arial, Helvetica, sans-serif;">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/ball.png" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-row"> 
+        <div class="box"><h1>Your Name</h1></div>
+        <div class="box">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
+      </div>
+
+      <div class="row" id="home">
+        <div style="display: flex;padding-top: 50px;">
+          <div class="box">
+            <h1>Full Stack Developer</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+              neque est nihil ipsum error. Deserunt voluptas explicabo ea eum
+              quasi. Rem nisi molestias quia nesciunt incidunt numquam fugiat
+              perferendis assumenda?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+              neque est nihil ipsum error. Deserunt voluptas explicabo ea eum
+              quasi. Rem nisi molestias quia nesciunt incidunt numquam fugiat
+              perferendis assumenda?
+            </p>
+            <button>Button 1</button>
+            <button>Button 1</button>
+          </div>
+          <div class="box">
+            <img src="https://picsum.photos/id/2/400/400" />
+          </div>
         </div>
-        <div class="row" id="home">
-            <div style="font-family: Arial, Helvetica, sans-serif;">
-                <h1>Full Stack Engineer</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-                   Ex exercitationem quia illum quaerat quo veritatis, quam nam minima consectetur ut dignissimos a sunt ab architecto.
-                   Ratione sunt iusto ipsam eos?</p><br>
-                   <button>button 1</button>
-                   <button>button 2</button>
-            </div>
-            <div class="img"><img src="/assets/images/html laptop.jpg"></div>
+      </div>
+
+      <div id="projects" class="row" style="background-color: lightcoral">
+        <h1>Projects</h1>
+        <div style="display: flex">
+          <div class="box">
+            <h3>Project 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Project 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Project 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
         </div>
-        <div class="row2">
-            <div class="box">
-                <img src="assets/images/5.png">
-                <h2>Project 1</h2>
-                <p>project 1 description</p>
-                <a href="https://dt7768181.github.io/online_d_store/">See the Project</a>
-            </div>
-            <div class="box">
-                <img src="assets/images/null.png">
-                <h2>Project 2</h2>
-                <p>project 2 description</p>
-                <a href="#">See the Project</a>
-            </div>
-            <div class="box">
-                <img src="assets/images/null.png">
-                <h2>Project 3</h2>
-                <p>project 3 description</p>
-                <a href="#">See the Project</a>
-            </div>
+      </div>
+      <div id="services" class="row" style="background-color: lightblue">
+        <h1>Services</h1>
+        <div style="display: flex">
+          <div class="box">
+            <h3>Web App Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Mobile App Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>Backend Development</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+          </div>
         </div>
+      </div>
+      <div id="about" class="row">
+        <h1>About</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint
+          optio labore a obcaecati. Ullam distinctio corrupti autem. Veritatis
+          ipsa veniam deserunt asperiores nesciunt at provident itaque
+          cupiditate vel dolor.
+        </h3>
+        <h2>Skills</h2>
+        <h3>Java, Python, Reactjs</h3>
+        <p>Display the logo of all the technologies you know.</p>
+      </div>
+      <div
+        id="contact"
+        class="row"
+        style="background-color: lightgoldenrodyellow"
+      >
+        <h1>Contact</h1>
+        <div style="display: flex">
+         
+
+          <div class="box">
+            <h3>Contact Form</h3>
+            <p>
+             <input type="text" placeholder="Enter Name">
+            </p>
+            <p>
+              <input type="email" placeholder="Enter Email">
+             </p>
+             <p>
+              <textarea rows="10" cols="60" placeholder="Enter message"></textarea>
+             </p>
+             <button>Send</button>
+          </div>
+
+          <div class="box">
+            <h3>Your/Company Name</h3>
+            <p>
+              <b>Address: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+              Perspiciatis, ab.
+            </p>
+            <p>
+              <b>Email Address: </b>sample@email.com
+            </p>
+            <p>
+              <b>Phone Number: </b>+91 343 445 6789
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">@copyright 2024. All rights reserved.</div>
     </div>
-</body>
+  </body>
 </html>
