@@ -5,9 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dheeraj Thummalapenta</title>
     <link rel="icon" type="image/x-icon" href="assets/images/ball.png" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/dark.css" id="theme"/>
   </head>
   <body>
+    <script>
+      function toggleTheme() {
+        const themeLink = document.getElementById('theme');
+        const currentTheme = themeLink.getAttribute('href');
+    
+        if (currentTheme === 'assets/css/styles.css') {
+          themeLink.setAttribute('href', 'assets/css/dark.css');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeLink.setAttribute('href', 'assets/css/styles.css');
+          localStorage.setItem('theme', 'light');
+        }
+      }
+    
+      // Set theme on page load
+      window.onload = () => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const themePath = savedTheme === 'dark' ? 'assets/css/dark.css' : 'assets/css/styles.css';
+        document.getElementById('theme').setAttribute('href', themePath);
+      };
+      const phrases = ['Dheeraj Thummalapenta', 'Full Stack Developer'];
+      let i = 0, j = 0, current = '', isDeleting = false;
+
+  function type() {
+    current = phrases[i];
+  let display = document.getElementById('typed-text');
+
+  if (!display) return;
+
+  if (!isDeleting && j <= current.length) {
+    display.textContent = current.substring(0, j++);
+  } else if (isDeleting && j >= 0) {
+    display.textContent = current.substring(0, j--);
+  }
+
+  if (j === current.length + 1) isDeleting = true;
+  if (j === 0) {
+    isDeleting = false;
+    i = (i + 1) % phrases.length;
+  }
+
+  setTimeout(type, isDeleting ? 60 : 120);
+}
+
+window.onload = type;
+
+    </script>
+    
     <div class="container">
       <div class="header-row"> 
         <div class="box"><h1>Dheeraj Thummalapenta</h1></div>
@@ -17,8 +65,8 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
-
             <li><a href="#contact">Contact</a></li>
+            <!-- <button onclick="toggleTheme()">Toggle Light Mode</button> -->
           </ul>
         </div>
       </div>
@@ -26,7 +74,7 @@
       <div class="row" id="home">
         <div style="display: flex;padding-top: 50px;">
           <div class="box">
-            <h1>Full Stack Developer</h1>
+            <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
             <p>
               Full Stack Developer with hands-on experience in designing, developing, and maintaining web applications across front-end and back-end technologies. 
               Proficient in HTML, CSS, JavaScript, React, Node.js, and databases like MongoDB and MySQL. 
@@ -47,103 +95,81 @@
         </div>
       </div>
 
-      <div id="projects" class="row" style="background-color: lightcoral">
+      <div id="projects" class="row">
         <h1>Projects</h1>
-        <div style="display: flex">
-          <div class="box">
-            <h3>Project 1</h3>
-            <p>
-              This is a minimal and user-friendly e-commerce website designed to showcase an online store layout. 
-              It features a clean interface with a homepage that displays a range of products, each with an image, title, price, and an "Add to Cart" button. 
-              The site also includes a shopping cart functionality, allowing users to view selected items and total cost dynamically. 
-              It's a great front-end demo for learning or showcasing basic e-commerce functionality using HTML, CSS.
-            </p>
-            <a href="https://dt7768181.github.io/online-store/">Project 1</a>
+        <div class="box-container" style="display: flex; justify-content: center; flex-wrap: wrap;">
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 1</h3>
+        <p>
+            A simple e-commerce site with a clean layout, product display, and dynamic shopping cart functionality.
+        </p>
+        <a href="https://dt7768181.github.io/online-store/">Project 1</a>
           </div>
 
-          <div class="box">
-            <h3>Project 2</h3>
-            <p>
-              Dhee MyBank is a clean and modern front-end banking web application designed to simulate core online banking functionalities. 
-              The interface includes a login system, dynamic user dashboard, transaction history display, fund transfers between accounts, loan request simulation, and account closure options. 
-              The project demonstrates the use of JavaScript for handling user interactions and state updates, making it a solid demo for showcasing skills in event-driven programming.
-            </p>
-            <a href="https://dt7768181.github.io/Dhee-Mybank/">Project 2</a>
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 2</h3>
+        <p>
+            Dhee MyBank is a modern front-end banking app simulating login, dashboard, transactions, transfers, loans, and account closure, showcasing JavaScript-driven interactions.
+        </p>
+        <a href="https://dt7768181.github.io/Dhee-Mybank/">Project 2</a>
           </div>
 
-          <div class="box">
-            <h3>Project 3</h3>
-            <p>
-              MyStore is a responsive e-commerce web application built using HTML, CSS, and JavaScript.
-              It features a dynamic product catalog with images, prices, and descriptions, as well as an interactive shopping cart system that updates in real-time as users add or remove products.
-            </p>
-            <a href="https://dt7768181.github.io/mystore/">Project 3</a>
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 3</h3>
+        <p>
+          MyStore is a responsive e-commerce web application built using HTML, CSS, and JavaScript. It features a dynamic product catalog with images, prices, and descriptions, as well as an interactive shopping cart system that updates in real-time as users add or remove products.
+        </p>
+        <a href="https://dt7768181.github.io/mystore/">Project 3</a>
           </div>
-        </div>
-        <div style="display: flex">
-          <div class="box">
-            <h3>Project 4</h3>
-            <p>
-              This project is a commercial-style website that uses Bootstrap's Carousel and other components to create a visually appealing and responsive design. 
-              It features a modern layout ideal for showcasing products, services, or a brand. The use of Bootstrap ensures mobile compatibility, smooth navigation, and faster development. 
-              Additional elements like buttons, cards, and responsive grids help enhance the overall user experience, giving the site a professional and polished look.</p>
-            <a href="https://dt7768181.github.io/website/">Project 4</a>
+
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 4</h3>
+        <p>
+          This project is a commercial-style website that uses Bootstrap's Carousel and other components to create a visually appealing and responsive design. 
+          It features a modern layout ideal for showcasing products, services, or a brand. The use of Bootstrap ensures mobile compatibility, smooth navigation, and faster development.
+        </p>
+        <a href="https://dt7768181.github.io/website/">Project 4</a>
           </div>
-          <div class="box">
-            <h3>Project 5</h3>
-            <p>
-              This project is a front-end mockup of a social media website built using Bootstrap for styling and JSONPlaceholder to simulate user data. 
-              It features a clean and responsive layout that mimics key elements of a social media feed, such as user profiles, posts, and comments. While it doesn't use any live API or backend functionality, 
-              it effectively demonstrates how to structure and display dynamic data using a static JSON source. Perfect as a UI/UX concept or a base for future full-stack development.            
-            </p>
-            <a href="https://dt7768181.github.io/social-media/">Project 5</a>
+
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 5</h3>
+        <p>
+          This project is a front-end mockup of a social media website built using Bootstrap for styling and JSONPlaceholder to simulate user data. 
+          It features a clean and responsive layout that mimics key elements of a social media feed, such as user profiles, posts, and comments.
+        </p>
+        <a href="https://dt7768181.github.io/social-media/">Project 5</a>
           </div>
-          <div class="box">
-            <h3>Project 6</h3>
-            <p>
-              This project is a simplified Amazon-like e-commerce frontend built entirely with React. 
-              It showcases dynamic product rendering, component-based UI design, and state management using React's core features. 
-              The application includes a product catalog with images, names, and prices, along with an "Add to Cart" system that updates the cart in real time. 
-              This project demonstrates a solid understanding of React fundamentals like props, state, reusable components, and event handling—all wrapped in a responsive and user-friendly layout.
-            </p>
-            <a href="https://dt7768181.github.io/react-amznstore/">Project 6</a>
+
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 6</h3>
+        <p>
+            A React-based e-commerce frontend mimicking Amazon, featuring dynamic product rendering, component-based UI, and real-time cart updates.
+        </p>
+        <a href="https://dt7768181.github.io/react-amznstore/">Project 6</a>
           </div>
-          <div class="box">
-            <h3>Project 7</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-              Perspiciatis, ab.
-            
-            </p>
-            <a href="https://dt7768181.github.io/Hello-World-dist/">Project 6</a>
+
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 7</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+          aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+        </p>
+        <a href="https://dt7768181.github.io/Hello-World-dist/">Project 7</a>
           </div>
-          <div class="box">
-            <h3>Project 8</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-              Perspiciatis, ab.
-            
-            </p>
-            <a href="">Project 6</a>
-          </div>
-          <div class="box">
-            <h3>Project 9</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-              Perspiciatis, ab.
-            
-            </p>
-            <a href="">Project 6</a>
+
+          <div class="card" style="width: 300px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3>Project 8</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+          aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+        </p>
+        <a href="">Project 8</a>
           </div>
         </div>
       </div>
-      <div id="services" class="row" style="background-color: lightblue">
+      <div id="services" class="row">
         <h1>Services</h1>
         <div style="display: flex">
           <div class="box">
@@ -185,15 +211,11 @@
           ipsa veniam deserunt asperiores nesciunt at provident itaque
           cupiditate vel dolor.
         </h3>
-        <h2>Skills</h2>
-        <h3>Java, Python, Reactjs</h3>
-        <p>Display the logo of all the technologies you know.</p>
+        <h1>Skills</h1>       
       </div>
       <div
         id="contact"
-        class="row"
-        style="background-color: lightgoldenrodyellow"
-      >
+        class="row">
         <h1>Contact</h1>
         <div style="display: flex">
          
