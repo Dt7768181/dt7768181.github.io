@@ -39,7 +39,7 @@
 
     .row {
       padding: 100px;
-      height: 75%;
+      height: auto;
     }
 
     .row .box {
